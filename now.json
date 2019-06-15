@@ -1,0 +1,7 @@
+{
+    "version": 2,
+    "name": "with Redux-Saga",
+    "builds": [
+        { "src": "next.config.js", "use": "@now/next" }
+    ]
+}
