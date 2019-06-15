@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "name": "NextJS with Redux-Saga Reselect boilerplate",
+    "name": "nextjs-redux-saga-reselect-boilerplate",
     "builds": [
         { "src": "next.config.js", "use": "@now/next" }
     ]

@@ -1,5 +1,5 @@
 {
-  "name": "with-redux-saga",
+  "name": "nextjs-redux-saga-reselect-boilerplate",
   "version": "1.0.0",
   "license": "ISC",
   "scripts": {

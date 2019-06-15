@@ -1,4 +1,6 @@
-# redux-saga example
+# nextjs-redux-saga-reselect-boilerplate
+##### based on:
+##### redux-saga example
 
 > This example and documentation is based on the [with-redux](https://github.com/zeit/next.js/tree/master/examples/with-redux) example.
 
