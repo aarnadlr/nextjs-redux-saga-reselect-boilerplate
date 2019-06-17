@@ -4,7 +4,14 @@
 
 > This example and documentation is based on the [with-redux](https://github.com/zeit/next.js/tree/master/examples/with-redux) example.
 
-## How to use
+### How to use
+
+### Use Yarn:
+
+`yarn install`
+
+`yarn dev`
+#
 
 ### Using `create-next-app`
 

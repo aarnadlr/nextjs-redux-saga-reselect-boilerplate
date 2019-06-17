@@ -1,11 +1,7 @@
 import { actionTypes } from './actions'
 
 export const exampleInitialState = {
-  count: 0,
-  error: false,
-  lastUpdate: 0,
-  light: false,
-  placeholderData: null
+  color: 'pink'
 }
 
 function reducer (state = exampleInitialState, action) {

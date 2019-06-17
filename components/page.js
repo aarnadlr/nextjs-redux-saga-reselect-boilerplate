@@ -1,36 +1,21 @@
-import Link from 'next/link'
-import { connect } from 'react-redux'
+import Link from "next/link";
+import { connect } from "react-redux";
+import {selectNewColorState} from '../selectors/selectors'
 
-import Counter from './counter'
-import Clock from './clock'
-
-function Page ({
-  error,
-  lastUpdate,
-  light,
-  linkTo,
-  NavigateTo,
-  placeholderData,
-  title
-}) {
+function Page({ title, color, justColor }) {
   return (
     <div>
       <h1>{title}</h1>
-      <Clock lastUpdate={lastUpdate} light={light} />
-      <Counter />
-      <nav>
-        <Link href={linkTo}>
-          <a>Navigate: {NavigateTo}</a>
-        </Link>
-      </nav>
-      {placeholderData && (
-        <pre>
-          <code>{JSON.stringify(placeholderData, null, 2)}</code>
-        </pre>
-      )}
-      {error && <p style={{ color: 'red' }}>Error: {error.message}</p>}
+      <h1 ><span style={{color:justColor}}>{color}</span></h1>
     </div>
-  )
+  );
 }
 
-export default connect(state => state)(Page)
+const mapStateToProps = (state, props)=>{
+  return{
+    justColor: state.color,
+    color: selectNewColorState(state)
+  }
+}
+
+export default connect(mapStateToProps)(Page);
