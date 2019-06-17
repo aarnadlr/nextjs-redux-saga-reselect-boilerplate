@@ -1,4 +1,6 @@
 import { createSelector } from "reselect";
+//Chrome Extension: Reselect DevTools
+import { registerSelectors } from "reselect-tools";
 
 //pluck fn: return plaucked state
 const getColor = state => state.color;
@@ -12,3 +14,6 @@ export const selectNewColorState = createSelector(
   getColor,
   transformColor
 );
+
+//Chrome Extension: Reselect DevTools
+registerSelectors({ selectNewColorState });
