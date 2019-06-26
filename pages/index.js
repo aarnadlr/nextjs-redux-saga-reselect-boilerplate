@@ -7,7 +7,7 @@ import Page from '../components/page'
 class Index extends React.Component {
   static async getInitialProps (props) {
     const { store, isServer } = props.ctx
-    store.dispatch(tickClock(isServer))
+    // store.dispatch(tickClock(isServer))
 
     if (!store.getState().placeholderData) {
       store.dispatch(loadData())
@@ -17,7 +17,7 @@ class Index extends React.Component {
   }
 
   componentDidMount () {
-    this.props.dispatch(startClock())
+    // this.props.dispatch(startClock())
   }
 
   render () {

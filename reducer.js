@@ -1,10 +1,11 @@
 import { actionTypes } from './actions'
 
-export const exampleInitialState = {
-  color: 'pink'
+export const initialState = {
+  color: 'pink',
+  count: 9
 }
 
-function reducer (state = exampleInitialState, action) {
+function reducer (state = initialState, action) {
   switch (action.type) {
     case actionTypes.FAILURE:
       return {

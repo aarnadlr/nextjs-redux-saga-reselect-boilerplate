@@ -1,12 +1,13 @@
-import Link from "next/link";
+// import Link from "next/link";
 import { connect } from "react-redux";
-import {selectNewColorState} from '../selectors/selectors'
+import {selectNewColorState, selectCount} from '../selectors/selectors'
 
-function Page({ title, color, justColor }) {
+function Page({ title, color, justColor, count }) {
   return (
     <div>
       <h1>{title}</h1>
       <h1 ><span style={{color:justColor}}>{color}</span></h1>
+      <h1>Count: {count}</h1>
     </div>
   );
 }
@@ -14,7 +15,8 @@ function Page({ title, color, justColor }) {
 const mapStateToProps = (state, props)=>{
   return{
     justColor: state.color,
-    color: selectNewColorState(state)
+    color: selectNewColorState(state),
+    count: selectCount(state)
   }
 }
 
