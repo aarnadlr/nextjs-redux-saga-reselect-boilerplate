@@ -6,7 +6,7 @@
 
 ### How to use
 
-### Use Yarn:
+### Use YARN:
 
 `yarn install`
 

@@ -1,51 +1,59 @@
-import { actionTypes } from './actions'
+import { actionTypes } from "./actions/actions";
 
+//Initial state
 export const initialState = {
-  color: 'pink',
+  color: "palegoldenrod",
   count: 9
-}
+};
 
-function reducer (state = initialState, action) {
+//Reducer
+function reducer(state = initialState, action) {
   switch (action.type) {
+
+    // 1
     case actionTypes.FAILURE:
       return {
         ...state,
         ...{ error: action.error }
-      }
+      };
 
+    // 2
     case actionTypes.INCREMENT:
       return {
         ...state,
         ...{ count: state.count + 1 }
-      }
+      };
 
+    // 3
     case actionTypes.DECREMENT:
       return {
         ...state,
         ...{ count: state.count - 1 }
-      }
+      };
 
+    // 4
     case actionTypes.RESET:
       return {
         ...state,
-        ...{ count: exampleInitialState.count }
-      }
+        ...{ count: initialState.count }
+      };
 
+    // 5
     case actionTypes.LOAD_DATA_SUCCESS:
       return {
         ...state,
         ...{ placeholderData: action.data }
-      }
+      };
 
-    case actionTypes.TICK_CLOCK:
-      return {
-        ...state,
-        ...{ lastUpdate: action.ts, light: !!action.light }
-      }
+    // case actionTypes.TICK_CLOCK:
+    //   return {
+    //     ...state,
+    //     ...{ lastUpdate: action.ts, light: !!action.light }
+    //   };
 
     default:
-      return state
+      return state;
   }
 }
 
-export default reducer
+export default reducer;
