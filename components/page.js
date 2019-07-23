@@ -1,12 +1,11 @@
 // import Link from "next/link";
-import { connect } from "react-redux";
-import { selectNewColorState, selectCount } from "../selectors/selectors";
-import { actionTypes, buttonClicked } from "../actions/actions";
+import { connect } from 'react-redux';
+import { selectNewColorState, selectCount } from '../selectors/selectors';
+import { actionTypes, buttonClicked } from '../actions/actions';
 
 function Page({ title, color, justColor, count, dispatch }) {
-
   const handleClick = () => {
-    console.log("clicked");
+    console.log('clicked');
     dispatch(buttonClicked());
   };
 
@@ -20,22 +19,17 @@ function Page({ title, color, justColor, count, dispatch }) {
 
       <h1>Count: {count}</h1>
 
-      <button
-        onClick={handleClick}
-        style={{ width: "100px", height: "30px", textTransform: "uppercase" }}
-      >
+      <button onClick={handleClick} style={{ width: '100px', height: '30px', textTransform: 'uppercase' }}>
         Click
       </button>
     </div>
   );
 }
 
-const mapStateToProps = (state, props) => {
-  return {
-    justColor: state.color,
-    color: selectNewColorState(state),
-    count: selectCount(state)
-  };
-};
+const mapStateToProps = (state, props) => ({
+  justColor: state.color,
+  color: selectNewColorState(state),
+  count: selectCount(state),
+});
 
 export default connect(mapStateToProps)(Page);

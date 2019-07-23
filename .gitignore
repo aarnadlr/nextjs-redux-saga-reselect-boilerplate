@@ -234,6 +234,7 @@ env-config.js
 # next.js build output
 .next
 out
+dist
 
 
 ### macOS ###

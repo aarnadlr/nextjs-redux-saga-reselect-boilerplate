@@ -1,15 +1,10 @@
 /* global fetch */
 
-import { all, call, delay, put, take, takeLatest } from "redux-saga/effects";
-import es6promise from "es6-promise";
-import "isomorphic-unfetch";
+import { all, call, delay, put, take, takeLatest } from 'redux-saga/effects';
+import es6promise from 'es6-promise';
+import 'isomorphic-unfetch';
 
-import {
-  actionTypes,
-  failure,
-  loadDataSuccess,
-  tickClock
-} from "../actions/actions";
+import { actionTypes, failure, loadDataSuccess, tickClock } from '../actions/actions';
 
 es6promise.polyfill();
 

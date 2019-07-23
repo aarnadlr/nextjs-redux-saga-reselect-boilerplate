@@ -1,15 +1,15 @@
-import React from 'react'
+import React from 'react';
 
-const pad = n => (n < 10 ? `0${n}` : n)
+const pad = n => (n < 10 ? `0${n}` : n);
 
 const format = t => {
-  const hours = t.getUTCHours()
-  const minutes = t.getUTCMinutes()
-  const seconds = t.getUTCSeconds()
-  return `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`
-}
+  const hours = t.getUTCHours();
+  const minutes = t.getUTCMinutes();
+  const seconds = t.getUTCSeconds();
+  return `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+};
 
-function Clock ({ lastUpdate, light }) {
+function Clock({ lastUpdate, light }) {
   return (
     <div className={light ? 'light' : ''}>
       {format(new Date(lastUpdate))}
@@ -26,7 +26,7 @@ function Clock ({ lastUpdate, light }) {
         }
       `}</style>
     </div>
-  )
+  );
 }
 
-export default Clock
+export default Clock;

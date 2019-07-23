@@ -1,48 +1,47 @@
-import { actionTypes } from "./actions/actions";
+import { actionTypes } from './actions/actions';
 
-//Initial state
+// Initial state
 export const initialState = {
-  color: "palegoldenrod",
-  count: 9
+  color: 'palegoldenrod',
+  count: 9,
 };
 
-//Reducer
+// Reducer
 function reducer(state = initialState, action) {
   switch (action.type) {
-
     // 1
     case actionTypes.FAILURE:
       return {
         ...state,
-        ...{ error: action.error }
+        ...{ error: action.error },
       };
 
     // 2
     case actionTypes.INCREMENT:
       return {
         ...state,
-        ...{ count: state.count + 1 }
+        ...{ count: state.count + 1 },
       };
 
     // 3
     case actionTypes.DECREMENT:
       return {
         ...state,
-        ...{ count: state.count - 1 }
+        ...{ count: state.count - 1 },
       };
 
     // 4
     case actionTypes.RESET:
       return {
         ...state,
-        ...{ count: initialState.count }
+        ...{ count: initialState.count },
       };
 
     // 5
     case actionTypes.LOAD_DATA_SUCCESS:
       return {
         ...state,
-        ...{ placeholderData: action.data }
+        ...{ placeholderData: action.data },
       };
 
     // case actionTypes.TICK_CLOCK:
