@@ -6,6 +6,8 @@ export const actionTypes = {
   LOAD_DATA: 'LOAD_DATA',
   LOAD_DATA_SUCCESS: 'LOAD_DATA_SUCCESS',
   BUTTON_CLICKED: '[page]BUTTON CLICKED!',
+  INC_BY_ONE: '[page]INC BY ONE!',
+  INC_BY_TEN: '[page]INC BY TEN!',
   // START_CLOCK: 'START_CLOCK',
   // TICK_CLOCK: 'TICK_CLOCK'
 };
@@ -14,6 +16,18 @@ export const actionTypes = {
 export function buttonClicked() {
   return {
     type: actionTypes.BUTTON_CLICKED,
+  };
+}// action creator function
+export function incrementByOne() {
+  return {
+    type: actionTypes.INC_BY_ONE,
+    payload: 1
+  };
+}// action creator function
+export function incrementByTen() {
+  return {
+    type: actionTypes.INC_BY_TEN,
+    payload: 10
   };
 }
 

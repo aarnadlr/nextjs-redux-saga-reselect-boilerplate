@@ -22,7 +22,16 @@ function reducer(state = initialState, action) {
         ...state,
         ...{ count: state.count + 1 },
       };
-
+    case actionTypes.INC_BY_ONE:
+      return {
+        ...state,
+        ...{ count: state.count + action.payload },
+      };
+    case actionTypes.INC_BY_TEN:
+      return{
+        ...state,
+        count: state.count + action.payload
+      }
     // 3
     case actionTypes.DECREMENT:
       return {
