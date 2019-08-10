@@ -8,8 +8,9 @@ export const actionTypes = {
   BUTTON_CLICKED: '[page]BUTTON CLICKED!',
   INC_BY_ONE: '[page]INC BY ONE!',
   INC_BY_TEN: '[page]INC BY TEN!',
+  INC_BY_SAGA: '[page]INC BY SAGA!',
   // START_CLOCK: 'START_CLOCK',
-  // TICK_CLOCK: 'TICK_CLOCK'
+  // TICK_CLOCK: 'TICK_CLOCK',
 };
 
 // action creator function
@@ -17,17 +18,26 @@ export function buttonClicked() {
   return {
     type: actionTypes.BUTTON_CLICKED,
   };
-}// action creator function
+}
+// action creator function
 export function incrementByOne() {
   return {
     type: actionTypes.INC_BY_ONE,
     payload: 1
   };
-}// action creator function
+}
+// action creator function
 export function incrementByTen() {
   return {
     type: actionTypes.INC_BY_TEN,
     payload: 10
+  };
+}
+// action creator function
+export function incrementBySaga() {
+  return {
+    type: actionTypes.INC_BY_SAGA,
+    payload: 100
   };
 }
 

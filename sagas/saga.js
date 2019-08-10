@@ -1,10 +1,10 @@
 /* global fetch */
 
-import { all, call, delay, put, take, takeLatest } from 'redux-saga/effects';
+import { all, call, delay, put, take, takeEvery, takeLatest } from 'redux-saga/effects';
 import es6promise from 'es6-promise';
 import 'isomorphic-unfetch';
 
-import { actionTypes, failure, loadDataSuccess, tickClock } from '../actions/actions';
+import { actionTypes, failure, loadDataSuccess, tickClock, incrementBySaga } from '../actions/actions';
 
 es6promise.polyfill();
 
@@ -26,8 +26,22 @@ es6promise.polyfill();
 //   }
 // }
 
+
+// DONE
+export function* watcherInc(){
+  // action type and CALLBACK to fire IF the action type MATCHES
+  yield takeEvery(actionTypes.INC_BY_SAGA, workerInc);
+}
+
+export function* workerInc(){
+  // Dispatch a NEW action object with a NEW TYPE
+  yield put({type:'INC_200', payload: 200});
+}
+
+
 function* rootSaga() {
   yield all([
+    watcherInc()
     // call(runClockSaga),
     // takeLatest(actionTypes.LOAD_DATA, loadDataSaga)
   ]);

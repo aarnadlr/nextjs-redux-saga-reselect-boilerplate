@@ -1,13 +1,13 @@
 // import Link from "next/link";
 import { connect } from 'react-redux';
 import { selectNewColorState, selectCount } from '../selectors/selectors';
-import { actionTypes, buttonClicked, incrementByOne, incrementByTen } from '../actions/actions';
+import { actionTypes, buttonClicked, incrementByOne, incrementByTen, incrementBySaga } from '../actions/actions';
 
 function Page({ title, color, justColor, count, dispatch }) {
 
   const handleClick = () => {
     console.log('clicked');
-    dispatch(incrementByOne());
+    dispatch(incrementBySaga());
   };
 
   return (
