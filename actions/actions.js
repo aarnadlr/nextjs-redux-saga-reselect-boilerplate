@@ -5,10 +5,13 @@ export const actionTypes = {
   RESET: 'RESET',
   LOAD_DATA: 'LOAD_DATA',
   LOAD_DATA_SUCCESS: 'LOAD_DATA_SUCCESS',
-  BUTTON_CLICKED: '[page]BUTTON CLICKED!',
-  INC_BY_ONE: '[page]INC BY ONE!',
-  INC_BY_TEN: '[page]INC BY TEN!',
-  INC_BY_SAGA: '[page]INC BY SAGA!',
+
+  BUTTON_CLICKED: '[page] BUTTON CLICKED!',
+  INC_BY_ONE: '[page] INC BY ONE!',
+  INC_BY_TEN: '[page] INC BY TEN!',
+  INC_BY_SAGA: '[page] INC BY SAGA!',
+
+  SUBMIT_FORM: '[VanillaForm] SUBMIT_FORM'
   // START_CLOCK: 'START_CLOCK',
   // TICK_CLOCK: 'TICK_CLOCK',
 };

@@ -4,6 +4,7 @@ import { actionTypes } from './actions/actions';
 export const initialState = {
   color: 'palegoldenrod',
   count: 9,
+  inputText: '',
 };
 
 // Reducer
@@ -22,6 +23,7 @@ function reducer(state = initialState, action) {
         ...state,
         ...{ count: state.count + 1 },
       };
+
     case actionTypes.INC_BY_ONE:
       return {
         ...state,
@@ -38,6 +40,12 @@ function reducer(state = initialState, action) {
       return {
         ...state,
         count: state.count + action.payload,
+      };
+
+    case actionTypes.SUBMIT_FORM:
+      return {
+        ...state,
+        inputText: action.payload,
       };
 
     // 3
