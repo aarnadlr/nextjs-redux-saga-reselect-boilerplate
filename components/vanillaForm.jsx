@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
-import {actionTypes} from '../actions/actions.js'
+import {actionTypes, submitForm} from '../actions/actions.js';
+
 function validate(valuesObj) {
   let errors = {};
 
@@ -16,8 +17,8 @@ function validate(valuesObj) {
 
 const VanillaForm = ({dispatch}) => {
   const [inputVal, setInputVal] = useState('');
-
   const [errorsObj, setErrorsObj] = useState({});
+  const [submitting, setSubmitting] = useState(false);
 
   const handleChange = e => {
     setInputVal(e.target.value);
@@ -36,7 +37,13 @@ const VanillaForm = ({dispatch}) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch({type: actionTypes.SUBMIT_FORM, payload: inputVal})
+
+    setSubmitting(true);
+
+    dispatch(submitForm(inputVal));
+
+    setSubmitting(false);
+    setInputVal('');
   };
 
   const inputStyle = {
@@ -84,7 +91,7 @@ const VanillaForm = ({dispatch}) => {
           {errorsObj.message}
         </div>
 
-        <button style={btnStyle} type="submit">
+        <button disabled={submitting} style={btnStyle} type="submit">
           Submit
         </button>
 

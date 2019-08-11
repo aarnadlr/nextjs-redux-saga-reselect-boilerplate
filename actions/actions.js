@@ -26,23 +26,37 @@ export function buttonClicked() {
 export function incrementByOne() {
   return {
     type: actionTypes.INC_BY_ONE,
-    payload: 1
+    payload: 1,
   };
 }
 // action creator function
 export function incrementByTen() {
   return {
     type: actionTypes.INC_BY_TEN,
-    payload: 10
+    payload: 10,
   };
 }
 // action creator function
 export function incrementBySaga() {
   return {
     type: actionTypes.INC_BY_SAGA,
-    payload: 100
+    payload: 100,
   };
 }
+
+export function submitForm(inputVal) {
+  return {
+    type: actionTypes.SUBMIT_FORM,
+    payload: inputVal
+  };
+}
+export function submitFormEnhanced() {
+  return {
+    type: actionTypes.SUBMIT_FORM,
+    payload: inputVal
+  };
+}
+
 
 // action creator function
 export function failure(error) {

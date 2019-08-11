@@ -42,7 +42,12 @@ function reducer(state = initialState, action) {
         count: state.count + action.payload,
       };
 
-    case actionTypes.SUBMIT_FORM:
+    // case actionTypes.SUBMIT_FORM:
+    //   return {
+    //     ...state,
+    //     inputText: action.payload,
+    //   };
+    case 'SUBMIT_2':
       return {
         ...state,
         inputText: action.payload,
