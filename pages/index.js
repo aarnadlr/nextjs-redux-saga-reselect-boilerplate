@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { loadData, startClock, tickClock } from '../actions/actions';
 import Page from '../components/page';
+import FetchButton from '../components/fetchButton';
 
 class Index extends React.Component {
   static async getInitialProps(props) {
@@ -21,7 +22,12 @@ class Index extends React.Component {
   // }
 
   render() {
-    return <Page title="Index Page" linkTo="/other" NavigateTo="Other Page" />;
+    return (
+      <>
+        <FetchButton />
+        <Page title="Index Page" linkTo="/other" NavigateTo="Other Page" />
+      </>
+    );
   }
 }
 
